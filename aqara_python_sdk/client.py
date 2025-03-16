@@ -18,6 +18,7 @@ class AqaraClient:
         self.__token = token
         self._account = account
         self._account_type = account_type
+        self.__refresh_token = None
 
     def query_devices(self, dids=None, position_id=None, page_num=1, page_size=50) -> PagingResponse[Device]:
         intent = "query.device.info"
@@ -147,6 +148,20 @@ class AqaraClient:
             "account": account if account is not None else self._account,
             "authCode": auth_code,
             "accountType": account_type if account_type is not None else self._account_type
+        }
+        response = self._post(intent, data, False)
+        self.__token = response["result"]["accessToken"]
+        self.__refresh_token = response["result"]["refreshToken"]
+        return response["result"]
+
+    def refresh_token(self, refresh_token: str = None):
+        if refresh_token is None:
+            refresh_token = self.__refresh_token
+        if refresh_token is None:
+            raise Exception("Refresh token is required.")
+        intent = "config.auth.refreshToken"
+        data = {
+            "refreshToken": refresh_token
         }
         response = self._post(intent, data, False)
         self.__token = response["result"]["accessToken"]
