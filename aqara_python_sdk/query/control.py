@@ -31,7 +31,7 @@ class FinalQuery:
         return self.__devices
 
     def light(self) -> List[LightControl]:
-        if self.__type == DeviceType.LIGHT:
+        if self.__type in [DeviceType.LIGHT, DeviceType.ANY]:
             devices = self.__devices
             lights = list(map(lambda x: LightControl(self.__client, x), devices))
             return lights
@@ -40,7 +40,7 @@ class FinalQuery:
             return []
 
     def switch(self) -> List[SwitchControl]:
-        if self.__type == DeviceType.SWITCH:
+        if self.__type in [DeviceType.SWITCH, DeviceType.ANY]:
             devices = self.__devices
             switches = list(map(lambda x: SwitchControl(self.__client, x), devices))
             return switches
