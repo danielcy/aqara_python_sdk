@@ -18,7 +18,7 @@ if __name__ == "__main__":
     key_id = os.getenv("AQARA_KEY_ID")
     app_key = os.getenv("AQARA_APP_KEY")
 
-    client = AqaraClient(app_id, key_id, app_key, account="13482892612", token="d8f6b66ed3abcc5789c064841e654db2")
+    client = AqaraClient(app_id, key_id, app_key, account="13482892612", token="SOME TOKEN")
 
     # client.send_auth_code()
     # token_res = client.get_token("805859")
