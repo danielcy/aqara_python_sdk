@@ -106,6 +106,16 @@ class AqaraClient:
             return BaseResponse(False, response["message"])
         return BaseResponse(True, response["message"])
 
+    def execute_scene(self, scene_id: str) -> BaseResponse:
+        intent = "config.scene.run"
+        data = {
+            "sceneId": scene_id
+        }
+        response = self._post(intent, data)
+        if response["message"] != "Success":
+            return BaseResponse(False, response["message"])
+        return BaseResponse(True, response["message"])
+
     def update_device_name(self, did: str, name: str) -> BaseResponse:
         intent = "config.device.updateName"
         data = {
