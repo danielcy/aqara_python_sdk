@@ -117,3 +117,10 @@ my_light.set_color_temperature(4000)
 # 执行场景
 controller.scene().execute_scene("我的场景")
 ```
+
+## TODO List:
+- [ ] 发布至Pypi
+- [ ] 查询功能完善
+- [ ] 支持更多开关功能定制
+- [ ] 支持窗帘等更多设备
+- [ ] 支持场景的创建和编辑
