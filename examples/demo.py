@@ -3,8 +3,7 @@ import os
 
 from dotenv import load_dotenv
 
-from aqara_python_sdk.client import AqaraClient
-from aqara_python_sdk.control import AqaraController
+from aqara_python_sdk import AqaraClient, AqaraController
 from aqara_python_sdk.enums.device_type import DeviceType
 
 logging.basicConfig(format='%(asctime)s - %(pathname)s[line:%(lineno)d] - %(levelname)s: %(message)s',
