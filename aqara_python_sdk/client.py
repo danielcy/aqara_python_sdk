@@ -11,14 +11,14 @@ from aqara_python_sdk.utils.sign import sign
 
 
 class AqaraClient:
-    def __init__(self, app_id, key_id, app_key, token=None, account=None, account_type=0):
+    def __init__(self, app_id, key_id, app_key, token=None, refresh_token=None, account=None, account_type=0):
         self.__app_id = app_id
         self.__key_id = key_id
         self.__app_key = app_key
         self.__token = token
         self._account = account
         self._account_type = account_type
-        self.__refresh_token = None
+        self.__refresh_token = refresh_token
 
     def query_devices(self, dids=None, position_id=None, page_num=1, page_size=50) -> PagingResponse[Device]:
         intent = "query.device.info"
