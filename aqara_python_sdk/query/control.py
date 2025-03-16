@@ -8,6 +8,7 @@ from aqara_python_sdk.enums.device_type import DeviceType
 from aqara_python_sdk.enums.query import QueryType
 from aqara_python_sdk.models.client import Device, Position
 from aqara_python_sdk.sub_control.light import LightControl
+from aqara_python_sdk.sub_control.switch import SwitchControl
 
 
 class FinalQuery:
@@ -36,6 +37,15 @@ class FinalQuery:
             return lights
         else:
             logging.warning("Only light devices can be controlled by light manager")
+            return []
+
+    def switch(self) -> List[SwitchControl]:
+        if self.__type == DeviceType.SWITCH:
+            devices = self.__devices
+            switches = list(map(lambda x: SwitchControl(self.__client, x), devices))
+            return switches
+        else:
+            logging.warning("Only switch devices can be controlled by switch manager")
             return []
 
 

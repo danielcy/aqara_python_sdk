@@ -11,6 +11,12 @@ class BaseControl:
         self.client = client
         self.device = device
 
+    def name(self):
+        return self.device.device_name
+
+    def device_id(self):
+        return self.device.did
+
     def _check_resource_support(self, resource_id: str):
         resources = self.client.query_model_resource(self.device.model, resource_id)
         return len(resources) > 0 and resources[0].access != 0

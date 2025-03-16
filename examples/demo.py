@@ -25,8 +25,8 @@ if __name__ == "__main__":
     controller.load_data()
     # print(json.dumps(controller.find_devices_by_name("开关", query_type=QueryType.FUZZY),
     #                  cls=DefaultEncoder, indent=4, ensure_ascii=False))
-    light_control = controller.query_device().position_name("客厅").device_type(DeviceType.LIGHT).device_name("走道射灯1").light()[0]
-    print(light_control.is_on())
+    control = controller.query_device().position_name("客厅").device_type(DeviceType.SWITCH).device_name("吧台开关").switch()[0]
+    print(control.is_on(2))
 
     print(controller.scene().list_scene_names())
 
