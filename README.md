@@ -54,9 +54,10 @@ client = AqaraClient(app_id, key_id, app_key,
 
 ### 查询
 client只作为一个最底层的API封装类，所以一般不推荐直接调用client中的方法进行操作，而是引入AqaraController进行操作
+
 ```python
 from aqara_python_sdk import AqaraClient, AqaraController
-from aqara_python_sdk.enums.device_type import DeviceType
+from aqara_python_sdk.enums import DeviceType
 import os
 
 app_id = os.getenv("AQARA_APP_ID")
@@ -86,9 +87,10 @@ my_scene = controller.scene().get_scene_by_name("我的场景")
 ```
 
 ### 操作设备 / 场景
+
 ```python
 from aqara_python_sdk import AqaraClient, AqaraController
-from aqara_python_sdk.enums.device_type import DeviceType
+from aqara_python_sdk.enums import DeviceType
 import os
 
 app_id = os.getenv("AQARA_APP_ID")

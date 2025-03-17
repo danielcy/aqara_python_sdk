@@ -70,7 +70,7 @@ class AqaraController:
         logging.info(f"AqaraController loaded all scenes. scene count: {len(self.__scenes)}")
 
     def query_device(self):
-        from aqara_python_sdk.query.control import ControlQuery
+        from aqara_python_sdk.query import ControlQuery
         return ControlQuery(self.client, self.position(), self.device())
 
     def device(self) -> DeviceManager:

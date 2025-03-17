@@ -1,3 +1,10 @@
 .env
 .venv
 .idea
+build
+dist
+tests
+*.egg-info
+.pdm-build
+.pdm-python
+pdm.lock

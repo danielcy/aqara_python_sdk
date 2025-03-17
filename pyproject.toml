@@ -1,0 +1,19 @@
+[project]
+name = "aqara_python_sdk"
+version = "0.0.1"
+description = "Awesome python sdk for Aqara development"
+authors = [
+    {name = "Daniel Cao", email = "448219947@qq.com"},
+]
+dependencies = ["requests>=2.32.3"]
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
