@@ -1,6 +1,11 @@
 ## 项目简介
 本SDK为Aqara开放平台的API的Python封装版本，除了对API进行封装外，还提供了一层控制层，用于简化对设备的查询和操作。
 
+## 安装
+```shell
+pip install aqara_python_sdk
+```
+
 ## 使用说明
 
 ### 准备工作
@@ -121,7 +126,7 @@ controller.scene().execute_scene("我的场景")
 ```
 
 ## TODO List:
-- [ ] 发布至Pypi
+- [x] 发布至Pypi
 - [ ] 查询功能完善
 - [ ] 支持更多开关功能定制
 - [ ] 支持窗帘等更多设备
