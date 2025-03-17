@@ -6,6 +6,7 @@ from aqara_python_sdk.manager.device import DeviceManager
 from aqara_python_sdk.manager.position import PositionManager
 from aqara_python_sdk.manager.scene import SceneManager
 from aqara_python_sdk.models.client import Device, Position, Scene
+from aqara_python_sdk.query.control import ControlQuery
 
 
 class AqaraController:
@@ -70,7 +71,6 @@ class AqaraController:
         logging.info(f"AqaraController loaded all scenes. scene count: {len(self.__scenes)}")
 
     def query_device(self):
-        from aqara_python_sdk.query import ControlQuery
         return ControlQuery(self.client, self.position(), self.device())
 
     def device(self) -> DeviceManager:

@@ -1,6 +1,6 @@
 [project]
 name = "aqara_python_sdk"
-version = "0.0.3.1"
+version = "0.0.3.2"
 description = "Awesome python sdk for Aqara development"
 authors = [
     {name = "Daniel Cao", email = "448219947@qq.com"},
