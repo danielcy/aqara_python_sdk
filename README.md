@@ -62,7 +62,7 @@ client只作为一个最底层的API封装类，所以一般不推荐直接调�
 
 ```python
 from aqara_python_sdk import AqaraClient, AqaraController
-from aqara_python_sdk.enums import DeviceType
+from aqara_python_sdk.enums.device_type import DeviceType
 import os
 
 app_id = os.getenv("AQARA_APP_ID")
@@ -95,7 +95,7 @@ my_scene = controller.scene().get_scene_by_name("我的场景")
 
 ```python
 from aqara_python_sdk import AqaraClient, AqaraController
-from aqara_python_sdk.enums import DeviceType
+from aqara_python_sdk.enums.device_type import DeviceType
 import os
 
 app_id = os.getenv("AQARA_APP_ID")
