@@ -7,7 +7,7 @@ import requests
 from aqara_python_sdk.models.base import PagingResponse
 from aqara_python_sdk.models.client import Device, Resource, ResourceStatus, Position, Scene
 from aqara_python_sdk.models.contract import QueryDeviceResourceRequest, ControlDeviceRequest, BaseResponse
-from aqara_python_sdk.utils import sign
+from aqara_python_sdk.utils.sign import sign
 
 
 class AqaraClient:

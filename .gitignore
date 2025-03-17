@@ -8,3 +8,4 @@ tests
 .pdm-build
 .pdm-python
 pdm.lock
+examples/local
